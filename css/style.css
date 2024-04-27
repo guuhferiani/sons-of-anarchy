@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* CSS Rule Font Face */
+
+@font-face {
+    font-family: Sons-of-Anarchy;
+    src: url(../fonts/sons-of-anarchy.woff2);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-image: url(../assets/soa-bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 1700px;
+    height: 760px;
+    color: #FAFAFA;
+    z-index: 1;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+}
+
+header nav {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav img {
+    width: 120px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 50px;
+}
+
+header nav ul li {
+    list-style-type: none;
+}
+
+header nav ul li a:link,
+header nav ul li a:visited {
+    color: #FAFAFA;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    transition: 0.5s;
+    font-family: Sons-of-Anarchy;
+}
+
+header nav ul li a:hover {
+    color: red;
+    transition: 0.5s;
+}
+
+main {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+main .contents {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .contents img {
+    width: 100%;
+}
+
+main .contents p {
+    text-align: center;
+}
+
+main .contents p.mobile {
+    display: none;
+}
+
+main .contents a:link,
+main .contents a:visited {
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    color: #FAFAFA;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    align-self: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Sons-of-Anarchy;
+    transition: 0.5s;
+}
+
+main .contents a:hover {
+    background-color: black;
+    transition: 0.5s;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nevoa {
+    height: 450px;
+    width: 100%;
+    background-image: url(../assets/nevoa.webp);
+    position: fixed;
+    bottom: 0px;
+    animation: soa;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+
+@keyframes soa {
+    from {
+        background-position: right;
+    }
+    to {
+        background-position: left;
+    }
+}
+
+.nevoa2 {
+    height: 450px;
+    width: 100%;
+    background-image: url(../assets/nevoa.webp);
+    position: fixed;
+    bottom: 0px;
+    animation: soa2;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+
+@keyframes soa2 {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+
+/* TABLET VERSION */
+
+@media (max-width: 1024px) {
+    .container {
+        width: 900px;
+        height: 560px;
+    }
+    main {
+        height: 400px;
+    }
+    .nevoa,
+    .nevoa2 {
+        height: 280px;
+        background-image: url(../assets/nevoa2.webp);
+    }
+}
+
+
+/* MOBILE VERSION */
+
+@media (max-width: 425px) {
+    body {
+        background-image: url(../assets/sons-of-anarchy.jpg.webp);
+        background-position: center;
+    }
+    .container {
+        width: 340px;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    main {
+        height: 500px;
+    }
+    main .contents {
+        width: 100%;
+        height: 200px;
+    }
+    main .contents a:link {
+        align-self: center;
+        margin-top: 15px;
+    }
+    main .contents p.no-mobile {
+        display: none;
+    }
+    main .contents p.mobile {
+        display: block;
+    }
+    header nav ul {
+        display: none;
+    }
+    header nav img {
+        width: 90px;
+    }
+    footer {
+        height: 30px;
+    }
+}
